@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Rocio 💜</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+<canvas id="fireworks"></canvas>
+<div class="galaxyGlow"></div>
+<div class="galaxyParticles"></div>
+<canvas id="constellationCanvas"></canvas>
+
+<!-- SOBRE -->
+
+<div id="envelopeScreen" class="envelope-screen">
+
+<div class="envelope" onclick="openEnvelope()">💌</div>
+
+<h2>Rocio 💜</h2>
+<p>Tengo algo muy especial que decirte</p>
+<p class="tap">Toca el sobre</p>
+
+</div>
+
+<div class="slider">
+
+<!-- INTRO -->
+
+<section class="screen active">
+
+<h1 class="title">Rocio 💜</h1>
+<h2>Hay algo muy importante que quiero decirte...</h2>
+
+<button onclick="startStory()">Comenzar</button>
+
+</section>
+
+<!-- PARTE 1 -->
+
+<section class="screen">
+
+<h2 id="letter1"></h2>
+
+<div class="photos">
+<img src="photos/foto1.jpg">
+
+</div>
+
+<button onclick="nextSlide(2)">Continuar</button>
+
+</section>
+
+<!-- PARTE 2 -->
+
+<section class="screen">
+
+<h2 id="letter2"></h2>
+
+<div class="photos">
+<img src="photos/foto2.jpg">
+</div>
+
+<button onclick="nextSlide(3)">Continuar</button>
+
+</section>
+
+<!-- PARTE 3 -->
+
+<section class="screen">
+
+<h2 id="letter3"></h2>
+
+<div class="photos">
+<img src="photos/foto3.jpg">
+</div>
+
+<button onclick="nextSlide(4)">Continuar</button>
+
+</section>
+
+<!-- PARTE 4 -->
+
+<section class="screen">
+
+<h2 id="letter4"></h2>
+
+<div class="photos">
+<img src="photos/foto4.jpg">
+</div>
+
+<button onclick="nextSlide(5)">Continuar</button>
+
+</section>
+
+<!-- PARTE 5 -->
+
+<section class="screen">
+
+<h2 id="letter5"></h2>
+
+<div class="photos">
+<img src="photos/foto1.jpg">
+</div>
+
+<button onclick="startCountdown()">Continuar</button>
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section class="screen">
+
+<h1 id="countdown"></h1>
+
+</section>
+
+<!-- PREGUNTA -->
+
+<section class="screen">
+
+<div class="heartBig">💜</div>
+
+<h1 class="big">¿Te gustaría ser mi novia?</h1>
+
+<div class="buttons">
+
+<button onclick="yesAnswer()">Sí 💜</button>
+<button id="noBtn">No 😅</button>
+
+</div>
+
+<div id="final"></div>
+
+</section>
+
+</div>
+
+<audio id="music" loop>
+<source src="music/BaileInolvidable.mp3" type="audio/mp3">
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,570 @@
+html, body{
+width:100%;
+height:100%;
+font-family:'Segoe UI',sans-serif;
+color:white;
+margin:0;
+padding:0;
+overflow:hidden;
+background:linear-gradient(180deg,#8e44ad,#4a1f7a);
+}
+
+/* SOBRE */
+
+.envelope-screen{
+
+position:fixed;
+width:100%;
+height:100vh;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+background:#5a2a8f;
+
+z-index:10;
+text-align:center;
+
+}
+
+/* SOBRE ANIMADO */
+
+.envelope{
+font-size:110px;
+cursor:pointer;
+animation:bounce 2s infinite, glow 3s infinite;
+transition:transform .8s;
+}
+
+.envelope.open{
+transform:scale(2) rotate(20deg);
+opacity:0;
+}
+
+/* BRILLO MORADO */
+
+@keyframes glow{
+
+0%{filter:drop-shadow(0 0 5px #c77dff)}
+50%{filter:drop-shadow(0 0 25px #c77dff)}
+100%{filter:drop-shadow(0 0 5px #c77dff)}
+
+}
+
+/* GALAXIA */
+
+.galaxyGlow{
+
+position:fixed;
+width:100%;
+height:100%;
+
+background:radial-gradient(circle at center,
+rgba(199,125,255,.4),
+transparent 60%);
+
+animation:galaxyMove 12s infinite alternate;
+
+z-index:-3;
+
+}
+
+@keyframes galaxyMove{
+
+0%{transform:scale(1)}
+100%{transform:scale(1.2)}
+
+}
+
+.tap{
+
+opacity:.8;
+font-size:18px;
+
+}
+
+
+/* SLIDER */
+
+.slider{
+position:absolute;
+top:0;
+left:0; 
+display:flex;
+width:800vw;
+height:100vh;
+transition:transform 1s ease;
+}
+
+.screen{
+flex:0 0 100vw;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+box-sizing:border-box;
+}
+
+/* TITULO */
+
+.title{
+
+font-size:42px;
+
+}
+
+
+#countdown{
+font-size:120px;
+font-weight:bold;
+animation:heartbeat 1s infinite;
+}
+
+/* TEXTO */
+
+h2{
+
+font-size:20px;
+line-height:1.8;
+max-width:650px;
+
+}
+
+/* BOTONES */
+
+button{
+
+margin-top:30px;
+padding:16px 34px;
+
+font-size:20px;
+
+border:none;
+border-radius:14px;
+
+background:#c77dff;
+
+color:white;
+
+cursor:pointer;
+
+box-shadow:0 10px 20px rgba(0,0,0,.3);
+
+}
+
+/* FOTOS */
+
+.photos{
+
+display:flex;
+gap:15px;
+margin-top:20px;
+
+}
+
+.photos img{
+
+width:120px;
+border-radius:12px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.5);
+
+animation:photo 2s forwards;
+
+}
+
+@keyframes photo{
+
+from{
+
+opacity:0;
+transform:scale(.6)
+
+}
+
+to{
+
+opacity:1;
+transform:scale(1)
+
+}
+
+}
+
+/* CORAZON */
+
+.heartBig{
+
+font-size:110px;
+
+animation:heartbeat 1.2s infinite,
+glowHeart 2s infinite alternate;
+
+}
+
+@keyframes glowHeart{
+
+from{
+filter:drop-shadow(0 0 10px #ff4d6d);
+}
+
+to{
+filter:drop-shadow(0 0 40px #ff4d6d);
+}
+
+}
+
+.big{
+
+font-size:36px;
+
+}
+
+@keyframes heartbeat{
+
+0%{transform:scale(1)}
+50%{transform:scale(1.3)}
+100%{transform:scale(1)}
+
+}
+
+/* CORAZONES */
+
+/* CORAZONES 3D */
+
+.heart{
+
+position:fixed;
+
+font-size:22px;
+
+animation:float 8s linear infinite,
+rotateHeart 6s infinite linear;
+
+}
+
+@keyframes rotateHeart{
+
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-100vh)}
+
+}
+
+/* ESTRELLAS */
+
+#stars{
+
+position:fixed;
+top:0;
+left:0;
+z-index:-2;
+
+}
+
+/* FUEGOS */
+
+#fireworks{
+
+position:fixed;
+top:0;
+left:0;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+/* ANILLO */
+.shootingStar{
+
+position:fixed;
+
+top:-50px;
+
+width:3px;
+height:80px;
+
+background:linear-gradient(white,transparent);
+
+transform:rotate(45deg);
+
+animation:shoot 2s linear;
+
+}
+/* BOTONES MAS BONITOS */
+
+button:hover{
+
+transform:scale(1.08);
+box-shadow:0 0 20px #c77dff;
+
+}
+
+/* TEXTO FINAL */
+
+.finalText{
+
+font-size:28px;
+margin-top:20px;
+animation:fadeIn 2s forwards;
+
+}
+/* GALAXIA PROFUNDA */
+
+.galaxyParticles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-4;
+}
+
+.particle{
+
+position:absolute;
+width:3px;
+height:3px;
+
+background:#c77dff;
+
+border-radius:50%;
+
+opacity:.7;
+
+animation:particleFloat linear infinite;
+
+}
+
+@keyframes particleFloat{
+
+from{
+transform:translateY(100vh) scale(.5);
+opacity:.4;
+}
+
+to{
+transform:translateY(-100vh) scale(1.5);
+opacity:1;
+}
+
+}
+
+
+/* CORAZONES 3D */
+
+.heart3d{
+
+position:fixed;
+
+font-size:28px;
+
+animation:heart3dFloat 10s linear infinite,
+heartRotate 6s infinite linear;
+
+transform-style:preserve-3d;
+
+}
+
+@keyframes heart3dFloat{
+
+0%{transform:translateY(100vh) rotateX(0deg)}
+100%{transform:translateY(-120vh) rotateX(360deg)}
+
+}
+
+@keyframes heartRotate{
+
+0%{transform:rotateY(0deg)}
+100%{transform:rotateY(360deg)}
+
+}
+
+
+/* PREGUNTA FINAL BRILLO */
+
+.big{
+
+font-size:38px;
+
+text-shadow:
+0 0 10px #c77dff,
+0 0 20px #c77dff,
+0 0 40px #c77dff;
+
+animation:questionGlow 2s infinite alternate;
+
+}
+
+/* CONSTELACIONES */
+
+#constellationCanvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-5;
+}
+
+/* BRILLOS MAGICOS */
+
+.sparkle{
+
+position:fixed;
+
+font-size:18px;
+
+animation:sparkle 2s linear forwards;
+
+}
+
+@keyframes sparkle{
+
+0%{
+transform:scale(.5);
+opacity:1;
+}
+
+100%{
+transform:scale(2);
+opacity:0;
+}
+
+}
+
+/* EXPLOSION CORAZONES FINAL */
+
+.bigHeartExplosion{
+
+position:fixed;
+
+font-size:40px;
+
+animation:explodeHeart 2s forwards;
+
+}
+
+@keyframes explodeHeart{
+
+0%{
+transform:scale(.5);
+opacity:1;
+}
+
+100%{
+transform:translateY(-200px) scale(2);
+opacity:0;
+}
+
+}
+
+/* TRANSICION SUAVE */
+
+.screen{
+opacity:0;
+transform:scale(.9);
+transition:all 1s ease;
+}
+
+.screen.active{
+opacity:1;
+transform:scale(1);
+}
+
+/* BOTONES MAS iOS */
+
+button{
+
+background:linear-gradient(45deg,#c77dff,#9d4edd);
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.4),
+0 0 20px #c77dff;
+
+}
+
+button:active{
+
+transform:scale(.95);
+
+}
+
+
+
+@keyframes questionGlow{
+
+from{
+
+text-shadow:
+0 0 5px #c77dff,
+0 0 15px #c77dff;
+
+}
+
+to{
+
+text-shadow:
+0 0 20px #c77dff,
+0 0 50px #c77dff;
+
+}
+
+}
+
+@keyframes fadeIn{
+
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+
+}
+
+@keyframes shoot{
+
+0%{
+transform:translate(0,0) rotate(45deg);
+opacity:1;
+}
+
+100%{
+transform:translate(-400px,600px) rotate(45deg);
+opacity:0;
+}
+
+}
+.ring{
+
+font-size:100px;
+
+animation:ring 2s forwards;
+
+opacity:0;
+
+}
+
+@keyframes ring{
+
+to{
+
+opacity:1;
+transform:scale(1.5)
+
+}
+
+
+}
