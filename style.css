@@ -168,14 +168,12 @@ margin-top:20px;
 }
 
 .photos img{
-
-width:120px;
+max-width:80vw;
+max-height:35vh;
+object-fit:cover;
 border-radius:12px;
-
 box-shadow:0 10px 20px rgba(0,0,0,.5);
-
 animation:photo 2s forwards;
-
 }
 
 @keyframes photo{
