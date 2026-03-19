@@ -317,25 +317,60 @@ noBtn.addEventListener("touchstart",moveButton)
 
 /* RESPUESTA SI */
 
-window.yesAnswer=function(){
+window.yesAnswer = function(){
 
-launchHearts()
-startFireworks()
-megaExplosion()
-bigHeartExplosion()
+    // OCULTAR PREGUNTA
+    document.querySelector(".buttons").style.display = "none"
+    document.querySelector(".big").style.display = "none"
 
-document.getElementById("final").innerHTML=`
+    launchHearts()
+    startFireworks()
+    megaExplosion()
+    bigHeartExplosion()
 
-<div class="ring">💍</div>
+    document.getElementById("final").innerHTML = `
+    <div class="ring">💍</div>
 
-<h2 class="finalText">
-Rocio 💜 prometo hacerte muy feliz.
-</h2>
+    <h2 class="finalText">
+    Rocio 💜 prometo hacerte muy feliz.
+    </h2>
 
-<h3>✨ Este es solo el comienzo de algo hermoso ✨</h3>
+    <h3>✨ Este es solo el comienzo de algo hermoso ✨</h3>
 
-`
+    <button class="restartBtn" onclick="restartStory()">💌</button>
+    `
+}
 
+window.restartStory = function(){
+
+    // Volver al inicio (sobre)
+    document.getElementById("envelopeScreen").style.display = "flex"
+
+    // RESET SOBRE (🔥 clave)
+    let env = document.querySelector(".envelope")
+    env.classList.remove("open")
+    env.style.opacity = "1"
+    env.style.transform = "scale(1) rotate(0deg)"
+
+    // Reset slider
+    currentSlide = 0
+    document.querySelector(".slider").style.transform = "translateX(0)"
+
+    // Limpiar pantallas
+    let screens = document.querySelectorAll(".screen")
+    screens.forEach(s => s.classList.remove("active"))
+
+    // Restaurar pregunta
+    document.querySelector(".buttons").style.display = "flex"
+    document.querySelector(".big").style.display = "block"
+
+    // Limpiar final
+    document.getElementById("final").innerHTML = ""
+
+    // Reiniciar música (opcional)
+    let music = document.getElementById("music")
+    music.pause()
+    music.currentTime = 0
 }
 
 /* LLUVIA DE CORAZONES */
@@ -521,3 +556,5 @@ document.querySelector(".slider").style.transform =
 })
 
 }
+
+
