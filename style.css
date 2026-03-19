@@ -523,7 +523,37 @@ button:active{
 transform:scale(.95);
 
 }
+.restartBtn{
+position:fixed;
+bottom:15px;
+right:15px;
 
+width:45px;
+height:45px;
+
+font-size:22px;
+
+border:none;
+border-radius:50%;
+
+background:rgba(255,255,255,0.15);
+color:white;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+backdrop-filter:blur(10px);
+cursor:pointer;
+
+box-shadow:0 4px 10px rgba(0,0,0,.3);
+
+z-index:999; /* IMPORTANTE */
+}
+
+.restartBtn:hover{
+transform:scale(1.15);
+}
 
 
 @keyframes questionGlow{
